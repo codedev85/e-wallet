@@ -26,12 +26,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-// dd($request);
+
         $walletSession  = $request->session()->get('wallet');
         $wallet = Wallet::where('user_email',Auth::user()->email)->firstOrfail();
         $transactions = Transaction::where('user_id',Auth::user()->id)->simplePaginate(10);
-      //  dd('hey');
-       // dd( $transactions);
+
         return view('home')->with('walletSession' , $walletSession )->with('wallet',$wallet)->with('transactions' ,$transactions );
     }
 }

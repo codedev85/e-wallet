@@ -17,8 +17,8 @@ class CheckAdmin
     public function handle($request, Closure $next)
     {
 
-        dd($request);
-        if(Auth::user()->role_id !== 1){
+
+        if(Auth::user()->role_id >1){
 
             return redirect('/home')->with('warning','You dont have permission to access this resource !');
         }

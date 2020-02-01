@@ -66,7 +66,7 @@ class RoleController extends Controller
         $wallet->balance = 0;
         $wallet->save();
 
-        return redirect('home')->with('success','Saved Successfully!');
+        return redirect('home')->with('success','User Created Successfully!');
 
     }else{
         return back()->with('warning','The password does not match');
