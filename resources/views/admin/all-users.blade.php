@@ -24,7 +24,7 @@
                 <h2 class="text-center">All Users</h2>
                 <div class="list-group">
                     @foreach($alladmin as $admin)
-                        <a href="{{url('/purchase/'.$admin->id)}}"
+                        <a href=""
                         class="list-group-item list-group-item-action">{{strtoupper($admin->name)}} - <small> {{$admin->role['name']}} - <div class='logs'> Last seen {{\Carbon\Carbon::parse($admin->logs)->diffForHumans()}} </div></small></a>
                     @endforeach
                  </div>
