@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+   
     /**
      * Show the application dashboard.
      *
@@ -30,7 +30,7 @@ class HomeController extends Controller
         $walletSession  = $request->session()->get('wallet');
         $wallet = Wallet::where('user_email',Auth::user()->email)->firstOrfail();
         $transactions = Transaction::where('user_id',Auth::user()->id)->simplePaginate(10);
-
+       
         return view('home')->with('walletSession' , $walletSession )->with('wallet',$wallet)->with('transactions' ,$transactions );
     }
 }
