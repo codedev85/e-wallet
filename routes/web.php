@@ -22,15 +22,16 @@ Auth::routes();
 // Route::get('/','HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/pay', [
+    'uses' => 'PaymentController@redirectToGateway',
+    'as' => 'pay'
+]);
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 Route::middleware(['auth','logs'])->group(function () {
 
 
-        Route::post('/pay', [
-            'uses' => 'PaymentController@redirectToGateway',
-            'as' => 'pay'
-        ]);
-        Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+      
 
 
 
