@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','logs'])->group(function () {
 
 
         Route::post('/pay', [

@@ -20,7 +20,7 @@
                 <div class="list-group">
                     @foreach($alladmin as $admin)
                         <a href="{{url('/purchase/'.$admin->id)}}"
-                        class="list-group-item list-group-item-action">{{strtoupper($admin->name)}} - <small> {{$admin->role['name']}}</small></a>
+                        class="list-group-item list-group-item-action">{{strtoupper($admin->name)}} - <small> {{$admin->role['name']}} - Last seen {{$admin->logs}}</small></a>
                     @endforeach
                  </div>
 

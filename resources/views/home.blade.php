@@ -12,7 +12,7 @@
                 @endif
                 @if(Auth::user()->role_id == 1)
                 <a class='btn btn-success' href='{{url('/create-product/')}}'> Create Product</a>
-                {{-- <a class='btn btn-success' href='{{url('/add-role/')}}'> Add Role</a> --}}
+                <a class='btn btn-success' href='{{url('/add-role/')}}'> Add Role</a>
                 <a class='btn btn-success' href='{{url('/all-user/')}}'> All Admin</a>
                 @endif
             </div>
