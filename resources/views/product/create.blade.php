@@ -6,13 +6,13 @@
     <a class='btn btn-success pull-right' class="text-right" href='{{url('/add-card/')}}'> Add New Product</a>
 <form method="POST" action="{{url('/add-product/')}}">
     @csrf
- 
+
     <div class="form-group">
             <label for="exampleInputEmail1">Product Name</label>
-           
+
          <select  class="form-control" name='card'>
            @foreach($card as $cd)
-             <option value="mtn">{{strtoupper($cd->name)}}</option>
+             <option value="{{$cd->name}}">{{strtoupper($cd->name)}}</option>
              @endforeach
          </select>
         </div>
