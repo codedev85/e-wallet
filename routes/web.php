@@ -28,13 +28,11 @@ Route::middleware(['auth','logs'])->group(function () {
 
 
       
-    Route::post('/pay', [
-        'uses' => 'PaymentController@redirectToGateway',
-        'as' => 'pay'
-    ]);
- 
-
-
+        Route::post('/pay', [
+            'uses' => 'PaymentController@redirectToGateway',
+            'as' => 'pay'
+        ]);
+    
 
         Route::get('/create-wallet/', 'WalletController@walletCreate');
 
